@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
+import { Analytics } from "@vercel/analytics/react";
 import { 
   Github, 
   Linkedin, 
@@ -556,6 +557,7 @@ export default function App() {
             <a href="https://www.linkedin.com/in/stephen-mwangi-bb39713a8/" target="_blank" className="hover:text-blue-400 transition-colors">LinkedIn</a>
           </div>
         </footer>
+        <Analytics />
       </div>
     </Router>
   );
