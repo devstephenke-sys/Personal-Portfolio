@@ -229,7 +229,14 @@ const About = () => (
                 role: "eLearning Officer",
                 company: "Don Bosco Tech Africa",
                 period: "Jan 2026 - Present",
-                desc: "Managing LMS platforms and developing technical vocational training modules. Leading the digital transformation of vocational education across Africa.",
+                desc: "Managing Learning Management System (LMS) platforms and developing high-quality technical and vocational training modules tailored for digital and blended learning environments. Leading the digital transformation of vocational education across Africa by integrating data systems, learning platforms, and modern instructional technologies to support evidence-based decision-making, institutional performance monitoring, and scalable skills development.",
+                current: true
+              },
+              {
+                role: "Data Analyst",
+                company: "Don Bosco Tech Africa",
+                period: "Jan 2026 - Present",
+                desc: "I am responsible for end-to-end data management and analytics across TVET centres in multiple countries under Don Bosco Tech Africa. My role focuses on ensuring data accuracy, consistency, and usability to support evidence-based decision-making at institutional and regional levels..",
                 current: true
               },
               {
