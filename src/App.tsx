@@ -304,16 +304,18 @@ const Skills = () => (
   <PageWrapper>
     <SectionTitle 
       title="Skills & Expertise" 
-      subtitle="A balanced toolkit of eLearning development and data science capabilities."
+      subtitle="A balanced toolkit of eLearning development, web development, and data science capabilities."
     />
+
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      
       <BentoCard title="eLearning Development" icon={BookOpen}>
         <div className="space-y-6">
           {[
             { name: "Articulate Storyline", level: 95 },
             { name: "Articulate Rise", level: 90 },
-            { name: "Moodle / LearnDash", level: 85 },
-            { name: "Instructional Design", level: 80 },
+            { name: "Moodle / LearnDash", level: 88 },
+            { name: "Instructional Design", level: 85 },
             { name: "AI Tutor Integration", level: 75 },
             { name: "Zoho Enterprise", level: 70 }
           ].map((skill) => (
@@ -323,7 +325,7 @@ const Skills = () => (
                 <span className="text-blue-400 font-mono">{skill.level}%</span>
               </div>
               <div className="h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
-                <motion.div 
+                <motion.div
                   initial={{ width: 0 }}
                   whileInView={{ width: `${skill.level}%` }}
                   className="h-full bg-blue-400"
@@ -350,7 +352,7 @@ const Skills = () => (
                 <span className="text-blue-400 font-mono">{skill.level}%</span>
               </div>
               <div className="h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
-                <motion.div 
+                <motion.div
                   initial={{ width: 0 }}
                   whileInView={{ width: `${skill.level}%` }}
                   className="h-full bg-blue-400"
@@ -360,11 +362,84 @@ const Skills = () => (
           ))}
         </div>
       </BentoCard>
-      <BentoCard title="Technical Languages" icon={Code2} className="md:col-span-2">
+
+      <BentoCard title="Web Development & LMS" icon={Globe}>
+        <div className="space-y-6">
+          {[
+            { name: "WordPress Development", level: 95 },
+            { name: "LearnDash LMS", level: 92 },
+            { name: "Web Applications", level: 88 },
+            { name: "Discipleship Platform Design", level: 90 },
+            { name: "Website Optimization", level: 85 },
+            { name: "CMS Customization", level: 87 }
+          ].map((skill) => (
+            <div key={skill.name} className="space-y-2">
+              <div className="flex justify-between text-sm">
+                <span className="text-white">{skill.name}</span>
+                <span className="text-blue-400 font-mono">{skill.level}%</span>
+              </div>
+              <div className="h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
+                <motion.div
+                  initial={{ width: 0 }}
+                  whileInView={{ width: `${skill.level}%` }}
+                  className="h-full bg-blue-400"
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+      </BentoCard>
+
+      <BentoCard title="Frontend & Backend Development" icon={Laptop}>
+        <div className="space-y-6">
+          {[
+            { name: "React.js", level: 82 },
+            { name: "Frontend Development", level: 85 },
+            { name: "PHP", level: 87 },
+            { name: "Laravel", level: 80 },
+            { name: "REST API Integration", level: 78 },
+            { name: "Database Management", level: 83 }
+          ].map((skill) => (
+            <div key={skill.name} className="space-y-2">
+              <div className="flex justify-between text-sm">
+                <span className="text-white">{skill.name}</span>
+                <span className="text-blue-400 font-mono">{skill.level}%</span>
+              </div>
+              <div className="h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
+                <motion.div
+                  initial={{ width: 0 }}
+                  whileInView={{ width: `${skill.level}%` }}
+                  className="h-full bg-blue-400"
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+      </BentoCard>
+
+      <BentoCard title="Technical Languages & Tools" icon={Code2} className="md:col-span-2">
         <div className="flex flex-wrap gap-4">
-          {["Python", "PHP", "Java", "C/C++", "HTML", "CSS", "JavaScript", "SQL"].map(lang => (
-            <div key={lang} className="px-6 py-3 rounded-2xl bg-white/5 border border-white/10 text-lg font-medium hover:bg-blue-500/10 hover:border-blue-500/20 hover:text-blue-400 transition-all cursor-default">
-              {lang}
+          {[
+            "Python",
+            "PHP",
+            "Java",
+            "C/C++",
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "SQL",
+            "React",
+            "Laravel",
+            "WordPress",
+            "LearnDash",
+            "Git",
+            "MySQL"
+          ].map((tech) => (
+            <div
+              key={tech}
+              className="px-6 py-3 rounded-2xl bg-white/5 border border-white/10 text-lg font-medium hover:bg-blue-500/10 hover:border-blue-500/20 hover:text-blue-400 transition-all cursor-default"
+            >
+              {tech}
             </div>
           ))}
         </div>
@@ -372,7 +447,6 @@ const Skills = () => (
     </div>
   </PageWrapper>
 );
-
 const Projects = () => (
   <PageWrapper>
     <SectionTitle 
