@@ -336,15 +336,15 @@ const Skills = () => (
         </div>
       </BentoCard>
 
-      <BentoCard title="Data Science & AI" icon={BrainCircuit}>
+      <BentoCard title="Programming, Web Development & LMS" icon={BrainCircuit}>
         <div className="space-y-6">
           {[
-            { name: "Python (Pandas/Scipy)", level: 90 },
+            { name: "Python, Java, PHP, SQL, NOSQL", level: 90 },
             { name: "Machine Learning", level: 85 },
             { name: "Fast API", level: 80 },
-            { name: "Data Visualization (Tableau)", level: 85 },
+            { name: "Wordpress and Learndash LMS", level: 85 },
             { name: "Neural Networks / LLMs", level: 65 },
-            { name: "Data Cleaning", level: 95 }
+            { name: "React, Laravel, Next.js", level: 95 }
           ].map((skill) => (
             <div key={skill.name} className="space-y-2">
               <div className="flex justify-between text-sm">
