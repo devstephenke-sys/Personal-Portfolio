@@ -184,7 +184,7 @@ const Home = () => {
                 <Send className="w-4 h-4" /> Hire Me
               </a>
               <a 
-                href="/Stephen_CV.pdf" 
+                href="/resume.html" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-6 py-3 bg-white/5 border border-white/10 text-white rounded-xl font-medium hover:bg-white/10 transition-colors flex items-center gap-2"
@@ -192,7 +192,7 @@ const Home = () => {
                 <Download className="w-4 h-4" /> Download Resume
               </a>
               <a 
-                href="/Stephen_CV.pdf" 
+                href="/resume.html" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-6 py-3 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 rounded-xl font-medium hover:bg-emerald-500/20 transition-colors flex items-center gap-2"
@@ -359,7 +359,7 @@ const About = () => (
               Download or view my complete CV with detailed work experience, education, and project history.
             </p>
             <a 
-              href="/Stephen_CV.pdf" 
+              href="/resume.html" 
               target="_blank"
               rel="noopener noreferrer"
               className="w-full py-3 bg-emerald-500 text-white rounded-xl font-medium hover:bg-emerald-600 transition-colors flex items-center justify-center gap-2"
@@ -367,7 +367,7 @@ const About = () => (
               <Download className="w-4 h-4" /> Download CV
             </a>
             <a 
-              href="/Stephen_CV.pdf" 
+              href="/resume.html" 
               target="_blank"
               rel="noopener noreferrer"
               className="w-full py-3 bg-white/5 border border-white/10 text-white rounded-xl font-medium hover:bg-white/10 transition-colors flex items-center justify-center gap-2"
@@ -691,7 +691,7 @@ const Contact = () => (
                 <p className="text-lg text-white">0745 534 836</p>
               </div>
             </a>
-            <a href="/Stephen_CV.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
+            <a href="/resume.html" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
               <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 flex items-center justify-center group-hover:bg-emerald-500/20 transition-colors">
                 <FileText className="w-6 h-6 text-emerald-400" />
               </div>

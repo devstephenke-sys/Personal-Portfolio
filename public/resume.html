@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stephen Njuguna Mwangi - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            background: #fff;
+        }
+        .header {
+            border-bottom: 3px solid #007bff;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        .name {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #007bff;
+            margin-bottom: 5px;
+        }
+        .title {
+            font-size: 1.3em;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        .contact {
+            font-size: 0.9em;
+            color: #555;
+        }
+        .contact span {
+            margin-right: 20px;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .section-title {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #007bff;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .job {
+            margin-bottom: 20px;
+        }
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+        .job-title {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .job-company {
+            color: #007bff;
+            font-weight: 600;
+        }
+        .job-date {
+            color: #666;
+            font-size: 0.9em;
+        }
+        .job-description {
+            margin-left: 0;
+            color: #555;
+        }
+        .job-description ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        .job-description li {
+            margin-bottom: 5px;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        .skill-category {
+            margin-bottom: 10px;
+        }
+        .skill-category strong {
+            color: #007bff;
+        }
+        .project {
+            margin-bottom: 15px;
+            padding-left: 15px;
+            border-left: 3px solid #007bff;
+        }
+        .project-title {
+            font-weight: bold;
+            color: #333;
+        }
+        .project-tech {
+            font-size: 0.85em;
+            color: #666;
+            font-style: italic;
+        }
+        .education-item {
+            margin-bottom: 15px;
+        }
+        .education-item strong {
+            color: #333;
+        }
+        .print-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .print-btn:hover {
+            background: #0056b3;
+        }
+        @media print {
+            .print-btn {
+                display: none;
+            }
+            body {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="print-btn" onclick="window.print()">Download PDF</button>
+
+    <div class="header">
+        <div class="name">Stephen Njuguna Mwangi</div>
+        <div class="title">Data Scientist & eLearning Developer</div>
+        <div class="contact">
+            <span>📍 Nairobi, Kenya</span>
+            <span>📧 devstephen.ke@gmail.com</span>
+            <span>📱 +254 745 534 836</span>
+        </div>
+        <div class="contact" style="margin-top: 10px;">
+            <span>🔗 github.com/devstephenke-sys</span>
+            <span>🔗 linkedin.com/in/stephen-mwangi-bb39713a8</span>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Professional Summary</div>
+        <p>Versatile Computer Scientist with 4+ years of experience specializing in AI/ML, eLearning development, and full-stack web applications. Proven track record of deploying data-driven solutions across 50+ TVET institutions in Africa, serving 10,000+ students and training 200+ learners through interactive digital platforms. Expert in building scalable systems that combine cutting-edge technology with educational excellence. Passionate about leveraging artificial intelligence to transform technical vocational education and training (TVET) at scale.</p>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Professional Experience</div>
+        
+        <div class="job">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">eLearning Officer & Data Analyst</div>
+                    <div class="job-company">Don Bosco Tech Africa</div>
+                </div>
+                <div class="job-date">January 2026 - Present</div>
+            </div>
+            <div class="job-description">
+                <ul>
+                    <li>Spearheaded AI-powered tutoring system deployment across 50+ TVET centres, reducing training time by 40% and improving student engagement</li>
+                    <li>Managed end-to-end data analytics for TVET institutions across 8 African countries, supporting evidence-based institutional decision-making</li>
+                    <li>Developed and maintained Learning Management System (LMS) platforms serving 10,000+ students with real-time progress tracking</li>
+                    <li>Designed and delivered 200+ technical training modules using Articulate Storyline and Rise, achieving 95% learner satisfaction</li>
+                    <li>Integrated AI-driven tutoring systems into LMS, providing personalized learning support and intelligent feedback</li>
+                    <li>Led digital transformation initiatives, establishing modern instructional technologies and performance monitoring systems</li>
+                    <li>Led cross-functional teams in implementing standardized digital learning frameworks</li>
+                    <li>Mentored junior developers on best practices for eLearning content development and data analysis</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">eLearning Intern</div>
+                    <div class="job-company">Don Bosco Tech Africa</div>
+                </div>
+                <div class="job-date">January 2025 - December 2025</div>
+            </div>
+            <div class="job-description">
+                <ul>
+                    <li>Developed standards-aligned digital learning experiences using Articulate Storyline and Rise</li>
+                    <li>Conducted learning analytics to identify areas for curriculum improvement</li>
+                    <li>Created interactive assessments and evaluation tools for technical training modules</li>
+                    <li>Supported migration of traditional training materials to digital formats</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">Data Entry Specialist</div>
+                    <div class="job-company">Mwangaza</div>
+                </div>
+                <div class="job-date">2023 - 2024</div>
+            </div>
+            <div class="job-description">
+                <ul>
+                    <li>Executed large-scale data entry, cleaning, and storage for organizational databases</li>
+                    <li>Ensured data accuracy and consistency across multiple systems</li>
+                    <li>Developed efficient workflows for data management and quality control</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Education</div>
+        
+        <div class="education-item">
+            <strong>Bachelor of Science in Computer Science</strong><br>
+            Rongo University | 2019 - 2023
+        </div>
+        
+        <div class="education-item">
+            <strong>Kenya Certificate of Secondary Education (KCSE)</strong><br>
+            Kabazi High School | 2015 - 2018
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Certifications</div>
+        
+        <div class="education-item">
+            <strong>IBM Data Analysis Professional Certificate</strong> | 2024
+        </div>
+        
+        <div class="education-item">
+            <strong>Computer Packages Certificate</strong> | Awake Computers
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Technical Skills</div>
+        
+        <div class="skills-grid">
+            <div class="skill-category">
+                <strong>Data Science & AI:</strong> Python (95%), SQL (90%), Machine Learning (85%), Neural Networks (75%), LLMs (75%), Computer Vision (80%), TensorFlow, PyTorch, Scikit-learn, FastAPI (80%), Pandas, NumPy, Streamlit Dashboards (90%)
+            </div>
+            <div class="skill-category">
+                <strong>eLearning Development:</strong> Articulate Storyline (95%), Articulate Rise (90%), Moodle (88%), LearnDash (88%), WordPress & LMS (85%), Instructional Design (85%), AI Tutor Integration (80%)
+            </div>
+            <div class="skill-category">
+                <strong>Full Stack Development:</strong> React (95%), Next.js (90%), JavaScript (85%), Laravel (90%), PHP (90%), Java (85%), RESTful APIs (85%), MySQL (90%), MongoDB (85%), PostgreSQL (80%)
+            </div>
+            <div class="skill-category">
+                <strong>DevOps & Cloud:</strong> Git, Docker (70%), CI/CD (75%), AWS (75%), Vercel (85%), MCP Servers (85%)
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Selected Projects</div>
+        
+        <div class="project">
+            <div class="project-title">TVET AI Tutor System</div>
+            <div class="project-tech">Python, FastAPI, LLMs, React, PostgreSQL</div>
+            <p>Deployed across 50+ TVET centres serving 10,000+ students. Achieved 40% reduction in training time through AI-powered personalized learning.</p>
+        </div>
+
+        <div class="project">
+            <div class="project-title">TVET Management System</div>
+            <div class="project-tech">Laravel, PHP, MySQL, React, Redis</div>
+            <p>Managing 10,000+ student records with automated course management and real-time analytics dashboard.</p>
+        </div>
+
+        <div class="project">
+            <div class="project-title">Don Bosco TVET Explorer</div>
+            <div class="project-tech">React, D3.js, Python, PostgreSQL, AWS</div>
+            <p>Interactive data visualization platform for TVET centre analytics across 8 African countries.</p>
+        </div>
+
+        <div class="project">
+            <div class="project-title">Electude Dashboard</div>
+            <div class="project-tech">Python, Streamlit, Pandas, PostgreSQL</div>
+            <p>Tracking 500+ learners daily with real-time progress metrics and automated reporting.</p>
+        </div>
+
+        <div class="project">
+            <div class="project-title">Breast Cancer Image Analysis</div>
+            <div class="project-tech">Python, TensorFlow, FastAPI, Computer Vision</div>
+            <p>CNN-based model achieving 95% accuracy on test dataset. IBM Professional Certificate project.</p>
+        </div>
+
+        <div class="project">
+            <div class="project-title">Applicant Tracking System</div>
+            <div class="project-tech">Laravel, PHP, MySQL, JavaScript</div>
+            <p>Processed 1,000+ job applications with automated screening, reducing time-to-hire by 35%.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Impact & Achievements</div>
+        <ul>
+            <li><strong>Scale & Reach:</strong> Deployed solutions across 50+ TVET institutions in 8 African countries, served 10,000+ students, trained 200+ learners, supported 10+ organizations</li>
+            <li><strong>Performance Metrics:</strong> 40% reduction in training time, 95% ML model accuracy, 95% learner satisfaction, 35% time-to-hire reduction</li>
+            <li><strong>Technical Excellence:</strong> Built 40+ production applications, developed AI agents and MCP servers, created training materials used by 100+ developers</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Languages</div>
+        <p>English (Native/Fluent), Swahili (Native/Fluent)</p>
+    </div>
+
+    <div class="section">
+        <div class="section-title">References</div>
+        <p>Available upon request.</p>
+    </div>
+
+</body>
+</html>
