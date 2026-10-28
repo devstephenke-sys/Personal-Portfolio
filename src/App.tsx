@@ -27,7 +27,8 @@ import {
   Download,
   Award,
   TrendingUp,
-  MessageSquare
+  MessageSquare,
+  FileText
 } from "lucide-react";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
@@ -183,12 +184,20 @@ const Home = () => {
                 <Send className="w-4 h-4" /> Hire Me
               </a>
               <a 
-                href="https://github.com/devstephenke-sys/Personal-Portfolio" 
+                href="/Stephen_CV.pdf" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-6 py-3 bg-white/5 border border-white/10 text-white rounded-xl font-medium hover:bg-white/10 transition-colors flex items-center gap-2"
               >
                 <Download className="w-4 h-4" /> Download Resume
+              </a>
+              <a 
+                href="/Stephen_CV.pdf" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-3 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 rounded-xl font-medium hover:bg-emerald-500/20 transition-colors flex items-center gap-2"
+              >
+                <ExternalLink className="w-4 h-4" /> View Resume
               </a>
             </div>
           </div>
@@ -341,6 +350,30 @@ const About = () => (
               <h4 className="text-sm font-medium">Computer Packages Certificate</h4>
               <p className="text-[10px] text-brand-text-dim uppercase tracking-wider">Awake Computers</p>
             </div>
+          </div>
+        </BentoCard>
+
+        <BentoCard title="Resume" icon={FileText} className="bg-emerald-500/5 border-emerald-500/20">
+          <div className="space-y-4">
+            <p className="text-sm text-brand-text-dim leading-relaxed">
+              Download or view my complete CV with detailed work experience, education, and project history.
+            </p>
+            <a 
+              href="/Stephen_CV.pdf" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full py-3 bg-emerald-500 text-white rounded-xl font-medium hover:bg-emerald-600 transition-colors flex items-center justify-center gap-2"
+            >
+              <Download className="w-4 h-4" /> Download CV
+            </a>
+            <a 
+              href="/Stephen_CV.pdf" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full py-3 bg-white/5 border border-white/10 text-white rounded-xl font-medium hover:bg-white/10 transition-colors flex items-center justify-center gap-2"
+            >
+              <ExternalLink className="w-4 h-4" /> View in Browser
+            </a>
           </div>
         </BentoCard>
       </div>
@@ -656,6 +689,15 @@ const Contact = () => (
               <div>
                 <p className="text-xs font-mono text-blue-400 uppercase tracking-widest">Phone</p>
                 <p className="text-lg text-white">0745 534 836</p>
+              </div>
+            </a>
+            <a href="/Stephen_CV.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
+              <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 flex items-center justify-center group-hover:bg-emerald-500/20 transition-colors">
+                <FileText className="w-6 h-6 text-emerald-400" />
+              </div>
+              <div>
+                <p className="text-xs font-mono text-emerald-400 uppercase tracking-widest">Resume</p>
+                <p className="text-lg text-white">Download / View CV</p>
               </div>
             </a>
             <div className="flex items-center gap-4 group">
