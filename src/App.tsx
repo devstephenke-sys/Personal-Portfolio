@@ -192,7 +192,7 @@ const Home = () => {
             </BentoCard>
             <BentoCard className="flex items-center justify-center text-center">
               <div>
-                <div className="text-5xl font-serif italic mb-1 text-blue-400">15+</div>
+                <div className="text-5xl font-serif italic mb-1 text-blue-400">40+</div>
                 <div className="text-[10px] font-mono text-brand-text-dim uppercase tracking-widest">Projects</div>
               </div>
             </BentoCard>
@@ -307,7 +307,7 @@ const Skills = () => (
       subtitle="A balanced toolkit of eLearning development, web development, and data science capabilities."
     />
 
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       
       <BentoCard title="eLearning Development" icon={BookOpen}>
         <div className="space-y-6">
@@ -316,7 +316,7 @@ const Skills = () => (
             { name: "Articulate Rise", level: 90 },
             { name: "Moodle / LearnDash", level: 88 },
             { name: "Instructional Design", level: 85 },
-            { name: "AI Tutor Integration", level: 75 },
+            { name: "AI Tutor Integration", level: 80 },
             { name: "Zoho Enterprise", level: 70 }
           ].map((skill) => (
             <div key={skill.name} className="space-y-2">
@@ -343,7 +343,7 @@ const Skills = () => (
             { name: "Machine Learning", level: 85 },
             { name: "Fast API", level: 80 },
             { name: "Wordpress and Learndash LMS", level: 85 },
-            { name: "Neural Networks / LLMs", level: 65 },
+            { name: "Neural Networks / LLMs", level: 75 },
             { name: "React, Laravel, Next.js", level: 95 }
           ].map((skill) => (
             <div key={skill.name} className="space-y-2">
@@ -362,6 +362,33 @@ const Skills = () => (
           ))}
         </div>
         </BentoCard>
+
+      <BentoCard title="AI & Data Science" icon={Sparkles}>
+        <div className="space-y-6">
+          {[
+            { name: "AI Agents & MCP Servers", level: 85 },
+            { name: "Computer Vision", level: 80 },
+            { name: "Data Visualization", level: 85 },
+            { name: "GenAI Applications", level: 75 },
+            { name: "Streamlit Dashboards", level: 90 },
+            { name: "Deep Learning", level: 70 }
+          ].map((skill) => (
+            <div key={skill.name} className="space-y-2">
+              <div className="flex justify-between text-sm">
+                <span className="text-white">{skill.name}</span>
+                <span className="text-blue-400 font-mono">{skill.level}%</span>
+              </div>
+              <div className="h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
+                <motion.div
+                  initial={{ width: 0 }}
+                  whileInView={{ width: `${skill.level}%` }}
+                  className="h-full bg-blue-400"
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+      </BentoCard>
     </div>
   </PageWrapper>
 );
@@ -369,20 +396,74 @@ const Projects = () => (
   <PageWrapper>
     <SectionTitle 
       title="Featured Projects" 
-      subtitle="A collection of work spanning interactive learning and predictive analytics."
+      subtitle="A collection of work spanning interactive learning, AI/ML, web systems, and data analytics."
     />
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       <ProjectCard 
-        title="Festo: Household Electrician"
-        description="Developed a comprehensive learning path for household electricians, focusing on technical and vocational education standards."
-        tags={["Articulate", "LMS", "Vocational Training", "Instructional Design"]}
-        link="https://lx.festo.com/en/learning-paths/2684"
+        title="TVET AI Tutor"
+        description="AI-powered tutoring system designed for TVET institutions, providing personalized learning support and intelligent feedback to students."
+        tags={["AI", "Python", "Education", "LLMs"]}
+        link="https://github.com/devstephenke-sys/TVET-AI-TUTOR"
+      />
+      <ProjectCard 
+        title="AI Debate Arena"
+        description="An interactive platform where AI models engage in structured debates, showcasing natural language processing and reasoning capabilities."
+        tags={["AI", "Python", "NLP", "GenAI"]}
+        link="https://github.com/devstephenke-sys/AI-Debate-Arena"
+      />
+      <ProjectCard 
+        title="Gen-AI Agents Training"
+        description="Comprehensive notebook-based training materials for building and deploying AI agents using modern frameworks and best practices."
+        tags={["AI Agents", "Python", "Notebooks", "Training"]}
+        link="https://github.com/devstephenke-sys/Gen-AI-Agents-Notebook-Training"
+      />
+      <ProjectCard 
+        title="Breast Cancer Image Analysis"
+        description="Machine learning model for analyzing medical images to detect breast cancer, demonstrating computer vision applications in healthcare."
+        tags={["Machine Learning", "Computer Vision", "Python", "Healthcare"]}
+        link="https://github.com/devstephenke-sys/breast-cancer-image-analysis-model"
+      />
+      <ProjectCard 
+        title="TVET Management System"
+        description="Comprehensive management system for TVET institutions, handling student records, course management, and administrative workflows."
+        tags={["Web Development", "Laravel", "PHP", "Database"]}
+        link="https://github.com/devstephenke-sys/TVET-Management-System"
+      />
+      <ProjectCard 
+        title="Don Bosco TVET Explorer"
+        description="Interactive web application for exploring and visualizing TVET centre data across multiple African countries."
+        tags={["React", "Data Visualization", "Web Development", "Maps"]}
+        link="https://github.com/devstephenke-sys/Don-Bosco-TVET-Centres-Explorer"
+      />
+      <ProjectCard 
+        title="Electude Dashboard"
+        description="Enhanced dashboard system for monitoring and analyzing learner progress in technical training environments."
+        tags={["Dashboards", "Python", "Data Analysis", "Visualization"]}
+        link="https://github.com/devstephenke-sys/Electude-Dashboard"
+      />
+      <ProjectCard 
+        title="Farm Management System"
+        description="Livestock management system designed for agricultural operations, tracking animal health, feeding schedules, and production metrics."
+        tags={["Web Development", "Database", "Agriculture", "Management"]}
+        link="https://github.com/devstephenke-sys/Farm-Management-for-Livestock-System"
+      />
+      <ProjectCard 
+        title="Applicant Tracking System"
+        description="Streamlined system for managing job applications, candidate evaluations, and hiring workflows for organizations."
+        tags={["Web Development", "Laravel", "HR Tech", "Database"]}
+        link="https://github.com/devstephenke-sys/Applicant-tracking-system"
+      />
+      <ProjectCard 
+        title="Yambio Catholic Web System"
+        description="Complete web system for the Catholic Diocese of Yambio, South Sudan, providing information management and community services."
+        tags={["Web Development", "Laravel", "Community", "Africa"]}
+        link="https://github.com/devstephenke-sys/Yambio-Catholic-South-Sudan-Web-System"
       />
       <ProjectCard 
         title="Plant Disease Analysis"
-        description="A machine learning model and Fast API implementation for predicting plant diseases from image data. Built as part of an IBM assignment."
+        description="Machine learning model and Fast API implementation for predicting plant diseases from image data."
         tags={["Python", "Fast API", "Machine Learning", "Data Science"]}
-        link="https://github.com/devstephenke-sys/Disease-Prediction-Model-IBM-Assignment/blob/main/PlantDiseaseAnalysis.ipynb"
+        link="https://github.com/devstephenke-sys/Disease-Prediction-Model-IBM-Assignment"
       />
       <ProjectCard 
         title="DBTA Survey Analysis"
@@ -391,16 +472,22 @@ const Projects = () => (
         link="https://dbtagp2jsosurveyanalysis-2huah8psohhxgibwp4dprm.streamlit.app/"
       />
       <ProjectCard 
-        title="AI Tutor Implementation"
-        description="Integrating AI-driven tutoring systems into the Don Bosco Tech Africa LMS to enhance student support."
-        tags={["AI", "LMS", "Python", "Education Tech"]}
-        link="https://github.com/devstephenke-sys"
+        title="Festo: Household Electrician"
+        description="Comprehensive learning path for household electricians, focusing on technical and vocational education standards."
+        tags={["Articulate", "LMS", "Vocational Training", "Instructional Design"]}
+        link="https://lx.festo.com/en/learning-paths/2684"
       />
       <ProjectCard 
         title="Basic Python Training"
-        description="A comprehensive repository for learning and training on Python fundamentals, covering data types, control structures, and basic algorithms."
+        description="Comprehensive repository for learning Python fundamentals, covering data types, control structures, and basic algorithms."
         tags={["Python", "Training", "Basics", "Education"]}
         link="https://github.com/devstephenke-sys/Basic-Python"
+      />
+      <ProjectCard 
+        title="ResearchHub"
+        description="Academic research platform facilitating collaboration, document management, and knowledge sharing for researchers."
+        tags={["Web Development", "Research", "Collaboration", "Academic"]}
+        link="https://github.com/devstephenke-sys/ResearchHub"
       />
     </div>
   </PageWrapper>
