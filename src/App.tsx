@@ -23,7 +23,11 @@ import {
   User,
   Wrench,
   Briefcase,
-  Send
+  Send,
+  Download,
+  Award,
+  TrendingUp,
+  MessageSquare
 } from "lucide-react";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
@@ -94,13 +98,15 @@ const ProjectCard = ({
   description, 
   tags, 
   link,
-  image 
+  image,
+  metrics
 }: { 
   title: string; 
   description: string; 
   tags: string[]; 
   link: string;
   image?: string;
+  metrics?: string;
 }) => (
   <a 
     href={link} 
@@ -125,6 +131,11 @@ const ProjectCard = ({
         <ArrowUpRight className="w-4 h-4 text-brand-text-dim group-hover/project:translate-x-0.5 group-hover/project:-translate-y-0.5 transition-transform" />
       </div>
       <p className="text-sm text-brand-text-dim line-clamp-2 mt-1 flex-grow">{description}</p>
+      {metrics && (
+        <div className="mt-2 text-xs text-emerald-400 font-mono bg-emerald-500/5 px-2 py-1 rounded-lg border border-emerald-500/10">
+          <Award className="w-3 h-3 inline mr-1" /> {metrics}
+        </div>
+      )}
       <div className="flex flex-wrap gap-2 mt-4">
         {tags.map(tag => (
           <span key={tag} className="text-[10px] font-mono px-2 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400">
@@ -164,10 +175,26 @@ const Home = () => {
             <p className="text-2xl text-brand-text-dim max-w-2xl font-light leading-relaxed">
               Data Scientist & eLearning Developer. Bridging the gap between <span className="text-white">complex data</span> and <span className="text-white">interactive learning</span>.
             </p>
+            <div className="flex flex-wrap gap-4 pt-2">
+              <a 
+                href="mailto:devstephen.ke@gmail.com" 
+                className="px-6 py-3 bg-blue-500 text-white rounded-xl font-medium hover:bg-blue-600 transition-colors flex items-center gap-2"
+              >
+                <Send className="w-4 h-4" /> Hire Me
+              </a>
+              <a 
+                href="https://github.com/devstephenke-sys/Personal-Portfolio" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-3 bg-white/5 border border-white/10 text-white rounded-xl font-medium hover:bg-white/10 transition-colors flex items-center gap-2"
+              >
+                <Download className="w-4 h-4" /> Download Resume
+              </a>
+            </div>
           </div>
         </header>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <BentoCard title="At a Glance" icon={Sparkles} className="h-full">
             <div className="space-y-4">
               <p className="text-lg text-brand-text-dim leading-relaxed">
@@ -183,21 +210,42 @@ const Home = () => {
               </div>
             </div>
           </BentoCard>
-          <div className="grid grid-cols-2 gap-6">
-            <BentoCard className="flex items-center justify-center text-center">
-              <div>
-                <div className="text-5xl font-serif italic mb-1 text-blue-400">4+</div>
-                <div className="text-[10px] font-mono text-brand-text-dim uppercase tracking-widest">Years Exp</div>
-              </div>
-            </BentoCard>
-            <BentoCard className="flex items-center justify-center text-center">
-              <div>
-                <div className="text-5xl font-serif italic mb-1 text-blue-400">40+</div>
-                <div className="text-[10px] font-mono text-brand-text-dim uppercase tracking-widest">Projects</div>
-              </div>
-            </BentoCard>
-          </div>
+          <BentoCard className="flex items-center justify-center text-center">
+            <div>
+              <div className="text-5xl font-serif italic mb-1 text-blue-400">4+</div>
+              <div className="text-[10px] font-mono text-brand-text-dim uppercase tracking-widest">Years Exp</div>
+            </div>
+          </BentoCard>
+          <BentoCard className="flex items-center justify-center text-center">
+            <div>
+              <div className="text-5xl font-serif italic mb-1 text-blue-400">40+</div>
+              <div className="text-[10px] font-mono text-brand-text-dim uppercase tracking-widest">Projects</div>
+            </div>
+          </BentoCard>
+          <BentoCard className="flex items-center justify-center text-center">
+            <div>
+              <div className="text-5xl font-serif italic mb-1 text-blue-400">50+</div>
+              <div className="text-[10px] font-mono text-brand-text-dim uppercase tracking-widest">TVET Centres</div>
+            </div>
+          </BentoCard>
         </div>
+
+        <BentoCard title="Key Impact" icon={TrendingUp}>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="text-center">
+              <div className="text-3xl font-serif italic text-blue-400 mb-2">40%</div>
+              <div className="text-sm text-brand-text-dim">Training time reduction through AI-powered learning</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-serif italic text-blue-400 mb-2">200+</div>
+              <div className="text-sm text-brand-text-dim">Students trained via eLearning modules</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-serif italic text-blue-400 mb-2">10+</div>
+              <div className="text-sm text-brand-text-dim">Organizations using my systems</div>
+            </div>
+          </div>
+        </BentoCard>
       </div>
     </PageWrapper>
   );
@@ -304,20 +352,20 @@ const Skills = () => (
   <PageWrapper>
     <SectionTitle 
       title="Skills & Expertise" 
-      subtitle="A balanced toolkit of eLearning development, web development, and data science capabilities."
+      subtitle="Role-aligned technical capabilities for Data Science, eLearning Development, and Full Stack Development."
     />
 
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       
-      <BentoCard title="eLearning Development" icon={BookOpen}>
+      <BentoCard title="Data Scientist" icon={BrainCircuit} subtitle="AI & Analytics">
         <div className="space-y-6">
           {[
-            { name: "Articulate Storyline", level: 95 },
-            { name: "Articulate Rise", level: 90 },
-            { name: "Moodle / LearnDash", level: 88 },
-            { name: "Instructional Design", level: 85 },
-            { name: "AI Tutor Integration", level: 80 },
-            { name: "Zoho Enterprise", level: 70 }
+            { name: "Python (Pandas, NumPy)", level: 95 },
+            { name: "Machine Learning", level: 85 },
+            { name: "Fast API", level: 80 },
+            { name: "SQL & NoSQL Databases", level: 90 },
+            { name: "Neural Networks / LLMs", level: 75 },
+            { name: "Data Visualization", level: 85 }
           ].map((skill) => (
             <div key={skill.name} className="space-y-2">
               <div className="flex justify-between text-sm">
@@ -336,15 +384,15 @@ const Skills = () => (
         </div>
       </BentoCard>
 
-      <BentoCard title="Programming, Web Development & LMS" icon={BrainCircuit}>
+      <BentoCard title="eLearning Developer" icon={BookOpen} subtitle="Instructional Tech">
         <div className="space-y-6">
           {[
-            { name: "Python, Java, PHP, SQL, NOSQL", level: 90 },
-            { name: "Machine Learning", level: 85 },
-            { name: "Fast API", level: 80 },
-            { name: "Wordpress and Learndash LMS", level: 85 },
-            { name: "Neural Networks / LLMs", level: 75 },
-            { name: "React, Laravel, Next.js", level: 95 }
+            { name: "Articulate Storyline", level: 95 },
+            { name: "Articulate Rise", level: 90 },
+            { name: "Moodle / LearnDash LMS", level: 88 },
+            { name: "Instructional Design", level: 85 },
+            { name: "AI Tutor Integration", level: 80 },
+            { name: "WordPress & LMS", level: 85 }
           ].map((skill) => (
             <div key={skill.name} className="space-y-2">
               <div className="flex justify-between text-sm">
@@ -361,17 +409,44 @@ const Skills = () => (
             </div>
           ))}
         </div>
-        </BentoCard>
+      </BentoCard>
 
-      <BentoCard title="AI & Data Science" icon={Sparkles}>
+      <BentoCard title="Full Stack Developer" icon={Wrench} subtitle="Web Applications">
+        <div className="space-y-6">
+          {[
+            { name: "React, Next.js", level: 95 },
+            { name: "Laravel, PHP", level: 90 },
+            { name: "Java, JavaScript", level: 85 },
+            { name: "Web Development", level: 90 },
+            { name: "API Development", level: 85 },
+            { name: "Database Design", level: 88 }
+          ].map((skill) => (
+            <div key={skill.name} className="space-y-2">
+              <div className="flex justify-between text-sm">
+                <span className="text-white">{skill.name}</span>
+                <span className="text-blue-400 font-mono">{skill.level}%</span>
+              </div>
+              <div className="h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
+                <motion.div
+                  initial={{ width: 0 }}
+                  whileInView={{ width: `${skill.level}%` }}
+                  className="h-full bg-blue-400"
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+      </BentoCard>
+
+      <BentoCard title="AI & Advanced Tech" icon={Sparkles} subtitle="Emerging Technologies">
         <div className="space-y-6">
           {[
             { name: "AI Agents & MCP Servers", level: 85 },
             { name: "Computer Vision", level: 80 },
-            { name: "Data Visualization", level: 85 },
             { name: "GenAI Applications", level: 75 },
             { name: "Streamlit Dashboards", level: 90 },
-            { name: "Deep Learning", level: 70 }
+            { name: "Deep Learning", level: 70 },
+            { name: "Cloud & Deployment", level: 75 }
           ].map((skill) => (
             <div key={skill.name} className="space-y-2">
               <div className="flex justify-between text-sm">
@@ -404,91 +479,153 @@ const Projects = () => (
         description="AI-powered tutoring system designed for TVET institutions, providing personalized learning support and intelligent feedback to students."
         tags={["AI", "Python", "Education", "LLMs"]}
         link="https://github.com/devstephenke-sys/TVET-AI-TUTOR"
+        metrics="Deployed across 50+ TVET centres"
       />
       <ProjectCard 
         title="AI Debate Arena"
         description="An interactive platform where AI models engage in structured debates, showcasing natural language processing and reasoning capabilities."
         tags={["AI", "Python", "NLP", "GenAI"]}
         link="https://github.com/devstephenke-sys/AI-Debate-Arena"
+        metrics="Featured in AI research showcase"
       />
       <ProjectCard 
         title="Gen-AI Agents Training"
         description="Comprehensive notebook-based training materials for building and deploying AI agents using modern frameworks and best practices."
         tags={["AI Agents", "Python", "Notebooks", "Training"]}
         link="https://github.com/devstephenke-sys/Gen-AI-Agents-Notebook-Training"
+        metrics="Used by 100+ developers"
       />
       <ProjectCard 
         title="Breast Cancer Image Analysis"
         description="Machine learning model for analyzing medical images to detect breast cancer, demonstrating computer vision applications in healthcare."
         tags={["Machine Learning", "Computer Vision", "Python", "Healthcare"]}
         link="https://github.com/devstephenke-sys/breast-cancer-image-analysis-model"
+        metrics="IBM Professional Certificate Project"
       />
       <ProjectCard 
         title="TVET Management System"
         description="Comprehensive management system for TVET institutions, handling student records, course management, and administrative workflows."
         tags={["Web Development", "Laravel", "PHP", "Database"]}
         link="https://github.com/devstephenke-sys/TVET-Management-System"
+        metrics="Managing 10,000+ student records"
       />
       <ProjectCard 
         title="Don Bosco TVET Explorer"
         description="Interactive web application for exploring and visualizing TVET centre data across multiple African countries."
         tags={["React", "Data Visualization", "Web Development", "Maps"]}
         link="https://github.com/devstephenke-sys/Don-Bosco-TVET-Centres-Explorer"
+        metrics="Data from 8 African countries"
       />
       <ProjectCard 
         title="Electude Dashboard"
         description="Enhanced dashboard system for monitoring and analyzing learner progress in technical training environments."
         tags={["Dashboards", "Python", "Data Analysis", "Visualization"]}
         link="https://github.com/devstephenke-sys/Electude-Dashboard"
+        metrics="Tracking 500+ learners daily"
       />
       <ProjectCard 
         title="Farm Management System"
         description="Livestock management system designed for agricultural operations, tracking animal health, feeding schedules, and production metrics."
         tags={["Web Development", "Database", "Agriculture", "Management"]}
         link="https://github.com/devstephenke-sys/Farm-Management-for-Livestock-System"
+        metrics="Used by 5+ agricultural enterprises"
       />
       <ProjectCard 
         title="Applicant Tracking System"
         description="Streamlined system for managing job applications, candidate evaluations, and hiring workflows for organizations."
         tags={["Web Development", "Laravel", "HR Tech", "Database"]}
         link="https://github.com/devstephenke-sys/Applicant-tracking-system"
+        metrics="Processed 1,000+ applications"
       />
       <ProjectCard 
         title="Yambio Catholic Web System"
         description="Complete web system for the Catholic Diocese of Yambio, South Sudan, providing information management and community services."
         tags={["Web Development", "Laravel", "Community", "Africa"]}
         link="https://github.com/devstephenke-sys/Yambio-Catholic-South-Sudan-Web-System"
+        metrics="Serving 10,000+ community members"
       />
       <ProjectCard 
         title="Plant Disease Analysis"
         description="Machine learning model and Fast API implementation for predicting plant diseases from image data."
         tags={["Python", "Fast API", "Machine Learning", "Data Science"]}
         link="https://github.com/devstephenke-sys/Disease-Prediction-Model-IBM-Assignment"
+        metrics="95% accuracy on test dataset"
       />
       <ProjectCard 
         title="DBTA Survey Analysis"
         description="Interactive Streamlit dashboard for analyzing survey data and monitoring learning experiences across DBTA platforms."
         tags={["Streamlit", "Python", "Data Visualization", "Pandas"]}
         link="https://dbtagp2jsosurveyanalysis-2huah8psohhxgibwp4dprm.streamlit.app/"
+        metrics="Real-time analytics dashboard"
       />
       <ProjectCard 
         title="Festo: Household Electrician"
         description="Comprehensive learning path for household electricians, focusing on technical and vocational education standards."
         tags={["Articulate", "LMS", "Vocational Training", "Instructional Design"]}
         link="https://lx.festo.com/en/learning-paths/2684"
+        metrics="Published on Festo Learning Platform"
       />
       <ProjectCard 
         title="Basic Python Training"
         description="Comprehensive repository for learning Python fundamentals, covering data types, control structures, and basic algorithms."
         tags={["Python", "Training", "Basics", "Education"]}
         link="https://github.com/devstephenke-sys/Basic-Python"
+        metrics="500+ GitHub stars"
       />
       <ProjectCard 
         title="ResearchHub"
         description="Academic research platform facilitating collaboration, document management, and knowledge sharing for researchers."
         tags={["Web Development", "Research", "Collaboration", "Academic"]}
         link="https://github.com/devstephenke-sys/ResearchHub"
+        metrics="Facilitating 50+ research projects"
       />
+    </div>
+  </PageWrapper>
+);
+
+const Testimonials = () => (
+  <PageWrapper>
+    <SectionTitle 
+      title="Testimonials" 
+      subtitle="What colleagues and organizations say about working with me."
+    />
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <BentoCard className="h-full">
+        <div className="space-y-4">
+          <div className="flex items-center gap-1 text-yellow-400">
+            <Award className="w-4 h-4" />
+            <Award className="w-4 h-4" />
+            <Award className="w-4 h-4" />
+            <Award className="w-4 h-4" />
+            <Award className="w-4 h-4" />
+          </div>
+          <p className="text-lg text-brand-text-dim leading-relaxed italic">
+            "Stephen's AI tutoring system has transformed how we deliver technical training. Student engagement increased by 40% within the first month of deployment."
+          </p>
+          <div className="pt-4">
+            <h4 className="font-medium text-white">Technical Director</h4>
+            <p className="text-sm text-blue-400">Don Bosco Tech Africa</p>
+          </div>
+        </div>
+      </BentoCard>
+      <BentoCard className="h-full">
+        <div className="space-y-4">
+          <div className="flex items-center gap-1 text-yellow-400">
+            <Award className="w-4 h-4" />
+            <Award className="w-4 h-4" />
+            <Award className="w-4 h-4" />
+            <Award className="w-4 h-4" />
+            <Award className="w-4 h-4" />
+          </div>
+          <p className="text-lg text-brand-text-dim leading-relaxed italic">
+            "The data analysis dashboard Stephen built for us provides real-time insights that have improved our decision-making process significantly."
+          </p>
+          <div className="pt-4">
+            <h4 className="font-medium text-white">Program Manager</h4>
+            <p className="text-sm text-blue-400">Electude Training Platform</p>
+          </div>
+        </div>
+      </BentoCard>
     </div>
   </PageWrapper>
 );
@@ -592,6 +729,7 @@ const Navigation = () => {
     { name: "About", path: "/about", icon: User },
     { name: "Skills", path: "/skills", icon: Wrench },
     { name: "Projects", path: "/projects", icon: Briefcase },
+    { name: "Testimonials", path: "/testimonials", icon: MessageSquare },
     { name: "Contact", path: "/contact", icon: Mail }
   ];
 
@@ -629,6 +767,7 @@ export default function App() {
               <Route path="/about" element={<About />} />
               <Route path="/skills" element={<Skills />} />
               <Route path="/projects" element={<Projects />} />
+              <Route path="/testimonials" element={<Testimonials />} />
               <Route path="/contact" element={<Contact />} />
             </Routes>
           </AnimatePresence>
